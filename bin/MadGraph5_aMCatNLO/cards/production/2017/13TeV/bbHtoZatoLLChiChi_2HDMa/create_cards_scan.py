@@ -26,17 +26,17 @@ def rwgt_card(mH,ma,width_dict):
 				rew_card += f'    set mass 35 {mH}\n'
 				rew_card += f'    set mass 36 {mH}\n'
 				rew_card += f'    set mass 37 {mH}\n'
-				rew_card += f'    set mass 54 {ma}\n'
+				rew_card += f'    set mass 55 {ma}\n'
 				rew_card += f'    set decay 35 {width_dict[str(mH)][str(ma)][str(v1)][str(v2)][str(v3)]["H"]}\n'
-				rew_card += f'    set decay 54 {width_dict[str(mH)][str(ma)][str(v1)][str(v2)][str(v3)]["a"]}\n'
+				rew_card += f'    set decay 55 {width_dict[str(mH)][str(ma)][str(v1)][str(v2)][str(v3)]["a"]}\n'
 				
 	return rew_card
 
 ##############################################
 def main():
 ##############################################
-	run_dir = "/nfs/dust/cms/user/perezdan/MC_Production/2016/bbH_Za_LLChiChi/genproductions/bin/MadGraph5_aMCatNLO/cards/production/13TeV/bbH_Za_LLChiChi"
-	out_dir = "/nfs/dust/cms/user/perezdan/MC_Production/2016/bbH_Za_LLChiChi/genproductions/bin/MadGraph5_aMCatNLO/cards/production/13TeV/bbH_Za_LLChiChi/parameter_scan"
+	run_dir = "/afs/cern.ch/user/m/mlopescr/public/bbHToZaToLLChiChi/genproductions/bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/bbHtoZatoLLChiChi_2HDMa"
+	out_dir = "/afs/cern.ch/user/m/mlopescr/public/bbHToZaToLLChiChi/genproductions/bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/bbHtoZatoLLChiChi_2HDMa/parameter_scan"
 	
 	
 	if(not os.path.exists(out_dir)):
@@ -48,9 +48,9 @@ def main():
 	with open('width_scan.json', 'r') as json_file:
 		width_dict = json.load(json_file)
 	
-	for MH in ['400','500','600','800','1000']:
+	for MH in ['1000']:
 		
-		for Ma in ['100','200','300','400','600','800']:
+		for Ma in ['100']:
 			
 			if int(Ma)+2*90>int(MH):
 				continue
